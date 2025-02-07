@@ -18,37 +18,37 @@ class TwoSum {
     Output: [0,1]
      */
 
-        public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
 
-            int index1 = 0;
-            int index2 = 0;
+        int index1 = 0;
+        int index2 = 0;
 
-            for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
 
-                index1 = i;
+            index1 = i;
 
-                for (int j = i + 1; j < nums.length - 1; j++) {
+            for (int j = i + 1; j < nums.length - 1; j++) {
 
-                    index2 = j;
-
-                    if (nums[index1] + nums[index2] == target) {
-
-                        break;
-                    }
-                }
+                index2 = j;
 
                 if (nums[index1] + nums[index2] == target) {
 
                     break;
                 }
-
             }
 
-            int[] newArray = new int[2];
-            newArray[0] = index1;
-            newArray[1] = index2;
+            if (nums[index1] + nums[index2] == target) {
 
-            return newArray;
+                break;
+            }
+
         }
+
+        int[] newArray = new int[2];
+        newArray[0] = index1;
+        newArray[1] = index2;
+
+        return newArray;
+    }
 }
 
