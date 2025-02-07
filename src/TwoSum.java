@@ -1,4 +1,6 @@
-class TwoSum {
+package PACKAGE_NAME;
+
+public class TwoSum {
     /*
     Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
     You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -18,37 +20,38 @@ class TwoSum {
     Output: [0,1]
      */
 
-    public int[] twoSum(int[] nums, int target) {
+        public int[] twoSum(int[] nums, int target) {
 
-        int index1 = 0;
-        int index2 = 0;
+            int index1 = 0;
+            int index2 = 0;
 
-        for (int i = 0; i < nums.length; i++) {
+            for (int i = 0; i < nums.length; i++) {
 
-            index1 = i;
+                index1 = i;
 
-            for (int j = i + 1; j < nums.length - 1; j++) {
+                for (int j = i + 1; j < nums.length - 1; j++) {
 
-                index2 = j;
+                    index2 = j;
+
+                    if (nums[index1] + nums[index2] == target) {
+
+                        break;
+                    }
+                }
 
                 if (nums[index1] + nums[index2] == target) {
 
                     break;
                 }
+
             }
 
-            if (nums[index1] + nums[index2] == target) {
+            int[] newArray = new int[2];
+            newArray[0] = index1;
+            newArray[1] = index2;
 
-                break;
-            }
-
+            return newArray;
         }
-
-        int[] newArray = new int[2];
-        newArray[0] = index1;
-        newArray[1] = index2;
-
-        return newArray;
-    }
 }
+
 
